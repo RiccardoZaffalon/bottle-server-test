@@ -1,4 +1,5 @@
 const time = document.getElementById("time");
+const container = document.querySelector(".container");
 let ampm = true;
 
 setInterval(update, 1000);
@@ -18,15 +19,11 @@ function update() {
 time.addEventListener("click", () => {
 	ampm = !ampm;
 	update();
-	chrome.storage.sync.set({ ampm: ampm }, function() {
-		// Notify that we saved.
-		console.log("Settings saved");
-	});
-});
+})
 
 window.onload = function() {
-	document.querySelector(".container").classList.add("loaded");
-};
+	container.classList.add("loaded");
+}
 window.onbeforeunload = function() {
-	document.querySelector(".container").classList.remove("loaded");
-};
+	container.classList.remove("loaded");
+}

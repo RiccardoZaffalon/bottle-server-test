@@ -22,6 +22,7 @@ time.addEventListener("click", () => {
 })
 
 window.onload = function() {
+	update();
 	container.classList.add("loaded");
 }
 window.onbeforeunload = function() {
